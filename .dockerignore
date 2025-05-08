@@ -1,0 +1,56 @@
+# Dependency directories
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment files
+.env
+.env.local
+.env.*
+
+# Git related files
+.git
+.gitignore
+.github/
+.gitattributes
+
+# Documentation files
+README.md
+LICENSE
+docs/
+*.md
+
+# Test files
+__tests__/
+test/
+tests/
+*.test.js
+*.spec.js
+coverage/
+
+# Build artifacts
+dist/
+build/
+
+# Development tools
+.vscode/
+.idea/
+*.sublime*
+.editorconfig
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Docker related files
+Dockerfile
+.dockerignore

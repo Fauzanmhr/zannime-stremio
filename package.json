@@ -1,0 +1,21 @@
+{
+  "name": "zannime-stremio",
+  "version": "1.0.0",
+  "description": "Stremio addon for wajik-anime-api",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "stremio",
+    "stremio-addon",
+    "anime",
+    "zannime"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "stremio-addon-sdk": "^1.6.10"
+  }
+}
