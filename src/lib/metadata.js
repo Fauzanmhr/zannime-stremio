@@ -100,7 +100,7 @@ function createEpisodeList(episodeList, source, animeId) {
     return {
       id: `${source}:${animeId}:${episode.episodeId}`,
       title: `Episode ${episodeNumber}`,
-      released: new Date().toISOString().split('T')[0],
+      released: '2000-01-01',
       season: 1, // Default to season 1
       episode: parseFloat(episodeNumber) || 0
     };

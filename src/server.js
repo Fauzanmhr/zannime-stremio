@@ -1,5 +1,9 @@
 // Import required modules
 const { addonBuilder, serveHTTP } = require('stremio-addon-sdk');
+const { configDotenv } = require('dotenv');
+
+// Load environment variables from .env file
+configDotenv();
 
 // Import API wrappers and utilities
 const { getMetadata } = require('./lib/metadata');
