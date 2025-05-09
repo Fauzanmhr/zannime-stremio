@@ -63,20 +63,27 @@ async function getStreams(id, baseUrl) {
 async function processQualities(qualities, source, baseUrl, streams) {
   for (const quality of qualities) {
     if (!quality.serverList || !Array.isArray(quality.serverList)) continue;
-    
+
     for (const server of quality.serverList) {
       try {
         const serverUrl = `${baseUrl}/${source}/server/${server.serverId}`;
         const serverResponse = await fetch(serverUrl);
-        
+
         if (!serverResponse.ok) continue;
-        
+
         const serverJson = await serverResponse.json();
         if (!serverJson.ok || !serverJson.data || !serverJson.data.url) continue;
-        
+
+        let streamUrl = serverJson.data.url;
+
+        // Modify URL for specific hosters like "pixeldrain"
+        if (streamUrl.toLowerCase().includes('pixeldrain')) {
+          streamUrl = streamUrl.replace('/u/', '/api/file/');
+        }
+
         streams.push({
           title: `${quality.title} - ${server.title}`,
-          url: serverJson.data.url,
+          url: streamUrl,
           name: `${quality.title} [${server.title}]`
         });
       } catch {
